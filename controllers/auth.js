@@ -18,8 +18,8 @@ const register = async (req, res, next) => {
     const otp = Math.floor(1000 + Math.random() * 9000).toString()
 
     const twilioClient = new Twilio(
-      'AC934c51de0468383fe8be51a48b0a37f6',
-      '1f9302d1088c694539d110e105af96d8',
+      process.env.accountSid,
+  process.env.authToken
     )
     const message = await twilioClient.messages.create({
       body: `Your OTP is: ${otp}`,
@@ -136,8 +136,8 @@ const login = async (req, res) => {
 }
 
 const client = new Twilio(
-  'AC934c51de0468383fe8be51a48b0a37f6',
-  '1f9302d1088c694539d110e105af96d8',
+  process.env.accountSid,
+  process.env.authToken,
 )
 const sendOTP = async (number) => {
   console.log('sending sms to : ', number)
