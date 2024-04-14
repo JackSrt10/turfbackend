@@ -1,9 +1,8 @@
 const jwt = require('jsonwebtoken')
-const bcrypt = require('bcrypt')
 const User = require('../models/User')
 const otpModel = require('../models/otp')
+const Turf = require('../models/turfListSchema')
 const Twilio = require('twilio')
-const { use } = require('bcrypt/promises')
 
 // Register a new user
 const register = async (req, res, next) => {
@@ -166,4 +165,20 @@ const sendOTP = async (number) => {
   }
 }
 
-module.exports = { register, login, verifySignUpOtp,verifyLoginOtp }
+// turf list
+
+const turfList = async (req, res) => {
+  try {
+      // Fetch data from MongoDB
+      const turfData = await User.find();
+      // Send the fetched data as JSON response
+      res.json(turfData);
+      console.log(turfData)
+  } catch (error) {
+    console.log(`${error.message}`)
+      // If an error occurs, send an error response
+      res.status(500).json({ error: error.message });
+  }
+};
+
+module.exports = { register, login, verifySignUpOtp,verifyLoginOtp,turfList }

@@ -175,7 +175,6 @@ const timeSlotSchema = new mongoose.Schema({
   
   const Promotion = mongoose.model('Promotion', promotionSchema);
 
-  
   const notificationSchema = new mongoose.Schema({
     NotificationID: {
       type: Number,
