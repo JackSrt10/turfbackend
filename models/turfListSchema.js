@@ -24,6 +24,7 @@ const turfSchema = new mongoose.Schema({
         required: true
     },
     Turf_Amenities: {
+        
         type: String,
         required: true
     },
@@ -37,7 +38,6 @@ const turfSchema = new mongoose.Schema({
     }
 });
 
-const 
-Turf = mongoose.model('EmployeeRecord', turfSchema);
+const Turf = mongoose.model('Turf', turfSchema);
 
 module.exports=Turf;
