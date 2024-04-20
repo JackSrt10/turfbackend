@@ -164,18 +164,4 @@ const sendOTP = async (number) => {
   }
 }
 
-// turf list
-
-// const turfList = async (req, res) => {
-//   try {
-//       // Fetch data from MongoDB
-//       const turfData = await Turf.find();
-//       res.json(turfData);
-//       console.log(turfData)
-//   } catch (error) {
-//     console.log(`${error.message}`)
-//       res.status(500).json({ error: error.message });
-//   }
-// };
-
 module.exports = { register, login, verifySignUpOtp,verifyLoginOtp }

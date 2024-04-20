@@ -15,6 +15,7 @@
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.3.1",
     "node-uuid": "^1.4.8",
+    "nodemailer": "^6.9.13",
     "nodemon": "^3.1.0",
     "twilio": "^5.0.3"
   }
