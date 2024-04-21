@@ -1,5 +1,6 @@
 const Turf = require("../../models/turfListSchema")
-
+const Subturf = require("../../models/subTurfSchema")
+const TimeSlot = require("../../models/timeSlotSchema")
 
 const turfAdminUser = async (req, res) => {
     const{Phone_number} = req.query;
@@ -13,5 +14,6 @@ const turfAdminUser = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
   }; 
+
 
   module.exports = {turfAdminUser}
